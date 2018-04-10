@@ -1,0 +1,200 @@
+SKU,NAME,LOCATION,DEPARTMENT,CATEGORY,SUBCATEGORY
+1,SKUDESC1,Permiter,Bakery,Bakery Bread,Bagels
+2,SKUDESC2,Permiter,Deli and Foodservice,Self Service Deli Cold,Beverages
+3,SKUDESC3,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+4,SKUDESC4,Permiter,Deli and Foodservice,Service Deli,All Other
+5,SKUDESC5,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+6,SKUDESC6,Center,Grocery,Crackers,Rice Cakes
+7,SKUDESC7,Center,GM,Audio Video,Audio
+8,SKUDESC8,Center,GM,Audio Video,Video DVD
+9,SKUDESC9,Permiter,GM,Housewares,Beeding
+10,SKUDESC10,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+11,SKUDESC11,Permiter,Seafood,Other Seafood,All Other Seafood
+12,SKUDESC12,Permiter,Seafood,Other Seafood,Prepared Seafood Entrees
+13,SKUDESC13,Permiter,Seafood,Other Seafood,Salads
+14,SKUDESC14,Permiter,Bakery,Bakery Bread,Bagels
+15,SKUDESC15,Permiter,Deli and Foodservice,Self Service Deli Cold,Beverages
+16,SKUDESC16,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+17,SKUDESC17,Permiter,Deli and Foodservice,Service Deli,All Other
+18,SKUDESC18,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+19,SKUDESC19,Center,Grocery,Crackers,Rice Cakes
+20,SKUDESC20,Center,GM,Audio Video,Audio
+21,SKUDESC21,Center,GM,Audio Video,Video DVD
+22,SKUDESC22,Permiter,GM,Housewares,Beeding
+23,SKUDESC23,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+24,SKUDESC24,Permiter,Seafood,Other Seafood,All Other Seafood
+25,SKUDESC25,Permiter,Seafood,Other Seafood,Prepared Seafood Entrees
+26,SKUDESC26,Permiter,Seafood,Other Seafood,Salads
+27,SKUDESC27,Permiter,Bakery,Bakery Bread,Bagels
+28,SKUDESC28,Permiter,Deli and Foodservice,Self Service Deli Cold,Beverages
+29,SKUDESC29,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+30,SKUDESC30,Permiter,Deli and Foodservice,Service Deli,All Other
+31,SKUDESC31,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+32,SKUDESC32,Center,Grocery,Crackers,Rice Cakes
+33,SKUDESC33,Center,GM,Audio Video,Audio
+34,SKUDESC34,Center,GM,Audio Video,Video DVD
+35,SKUDESC35,Permiter,GM,Housewares,Beeding
+36,SKUDESC36,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+37,SKUDESC37,Permiter,Seafood,Other Seafood,All Other Seafood
+38,SKUDESC38,Permiter,Seafood,Other Seafood,Prepared Seafood Entrees
+39,SKUDESC39,Permiter,Seafood,Other Seafood,Salads
+40,SKUDESC40,Permiter,Deli and Foodservice,Service Deli,All Other
+41,SKUDESC41,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+42,SKUDESC42,Center,Grocery,Crackers,Rice Cakes
+43,SKUDESC43,Center,GM,Audio Video,Audio
+44,SKUDESC44,Center,GM,Audio Video,Video DVD
+45,SKUDESC45,Permiter,GM,Housewares,Beeding
+46,SKUDESC46,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+47,SKUDESC47,Permiter,Seafood,Other Seafood,All Other Seafood
+48,SKUDESC48,Permiter,Seafood,Other Seafood,Prepared Seafood Entrees
+49,SKUDESC49,Permiter,Seafood,Other Seafood,Salads
+50,SKUDESC50,Permiter,Bakery,Bakery Bread,Bagels
+51,SKUDESC51,Permiter,Deli and Foodservice,Self Service Deli Cold,Beverages
+52,SKUDESC52,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+53,SKUDESC53,Permiter,Deli and Foodservice,Service Deli,All Other
+54,SKUDESC54,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+55,SKUDESC55,Permiter,Deli and Foodservice,Service Deli,All Other
+56,SKUDESC56,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+57,SKUDESC57,Center,Grocery,Crackers,Rice Cakes
+58,SKUDESC58,Center,GM,Audio Video,Audio
+59,SKUDESC59,Center,GM,Audio Video,Video DVD
+60,SKUDESC60,Permiter,GM,Housewares,Beeding
+61,SKUDESC61,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+62,SKUDESC62,Permiter,Seafood,Other Seafood,All Other Seafood
+63,SKUDESC63,Permiter,Seafood,Other Seafood,Prepared Seafood Entrees
+64,SKUDESC64,Permiter,Seafood,Other Seafood,Salads
+65,SKUDESC65,Permiter,Bakery,Bakery Bread,Bagels
+66,SKUDESC66,Permiter,Deli and Foodservice,Self Service Deli Cold,Beverages
+67,SKUDESC67,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+68,SKUDESC68,Permiter,Deli and Foodservice,Service Deli,All Other
+69,SKUDESC69,Permiter,Seafood,Other Seafood,Salads
+70,SKUDESC70,Permiter,Bakery,Bakery Bread,Bagels
+71,SKUDESC71,Permiter,Deli and Foodservice,Self Service Deli Cold,Beverages
+72,SKUDESC72,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+73,SKUDESC73,Permiter,Deli and Foodservice,Service Deli,All Other
+74,SKUDESC74,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+75,SKUDESC75,Permiter,Deli and Foodservice,Service Deli,All Other
+76,SKUDESC76,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+77,SKUDESC77,Center,Grocery,Crackers,Rice Cakes
+78,SKUDESC78,Center,GM,Audio Video,Audio
+79,SKUDESC79,Center,GM,Audio Video,Video DVD
+80,SKUDESC80,Permiter,GM,Housewares,Beeding
+81,SKUDESC81,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+82,SKUDESC82,Permiter,Seafood,Other Seafood,Salads
+83,SKUDESC83,Permiter,Bakery,Bakery Bread,Bagels
+84,SKUDESC84,Permiter,Deli and Foodservice,Self Service Deli Cold,Beverages
+85,SKUDESC85,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+86,SKUDESC86,Permiter,Deli and Foodservice,Service Deli,All Other
+87,SKUDESC87,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+88,SKUDESC88,Permiter,Deli and Foodservice,Service Deli,All Other
+89,SKUDESC89,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+90,SKUDESC90,Center,Grocery,Crackers,Rice Cakes
+91,SKUDESC91,Center,GM,Audio Video,Audio
+92,SKUDESC92,Center,GM,Audio Video,Video DVD
+93,SKUDESC93,Permiter,GM,Housewares,Beeding
+94,SKUDESC94,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+95,SKUDESC95,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+96,SKUDESC96,Permiter,Deli and Foodservice,Service Deli,All Other
+97,SKUDESC97,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+98,SKUDESC98,Permiter,Deli and Foodservice,Service Deli,All Other
+99,SKUDESC99,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+100,SKUDESC100,Center,Grocery,Crackers,Rice Cakes
+101,SKUDESC101,Center,GM,Audio Video,Audio
+102,SKUDESC102,Center,GM,Audio Video,Video DVD
+103,SKUDESC103,Permiter,GM,Housewares,Beeding
+104,SKUDESC104,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+105,SKUDESC105,Permiter,Seafood,Other Seafood,Salads
+106,SKUDESC106,Permiter,Bakery,Bakery Bread,Bagels
+107,SKUDESC107,Permiter,Deli and Foodservice,Self Service Deli Cold,Beverages
+108,SKUDESC108,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+109,SKUDESC109,Permiter,Deli and Foodservice,Service Deli,All Other
+110,SKUDESC110,Permiter,Deli and Foodservice,Service Deli,All Other
+111,SKUDESC111,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+112,SKUDESC112,Center,Grocery,Crackers,Rice Cakes
+113,SKUDESC113,Center,GM,Audio Video,Audio
+114,SKUDESC114,Center,GM,Audio Video,Video DVD
+115,SKUDESC115,Permiter,GM,Housewares,Beeding
+116,SKUDESC116,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+117,SKUDESC117,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+118,SKUDESC118,Permiter,Deli and Foodservice,Service Deli,All Other
+119,SKUDESC119,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+120,SKUDESC120,Permiter,Deli and Foodservice,Service Deli,All Other
+121,SKUDESC121,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+122,SKUDESC122,Center,Grocery,Crackers,Rice Cakes
+123,SKUDESC123,Center,GM,Audio Video,Audio
+124,SKUDESC124,Center,GM,Audio Video,Video DVD
+125,SKUDESC125,Permiter,GM,Housewares,Beeding
+126,SKUDESC126,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+127,SKUDESC127,Center,GM,Audio Video,Video DVD
+128,SKUDESC128,Permiter,GM,Housewares,Beeding
+129,SKUDESC129,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+130,SKUDESC130,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+131,SKUDESC131,Permiter,Deli and Foodservice,Service Deli,All Other
+132,SKUDESC132,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+133,SKUDESC133,Permiter,Deli and Foodservice,Service Deli,All Other
+134,SKUDESC134,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+135,SKUDESC135,Center,Grocery,Crackers,Rice Cakes
+136,SKUDESC136,Center,GM,Audio Video,Audio
+137,SKUDESC137,Center,GM,Audio Video,Video DVD
+138,SKUDESC138,Permiter,GM,Housewares,Beeding
+139,SKUDESC139,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+140,SKUDESC140,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+141,SKUDESC141,Permiter,Deli and Foodservice,Service Deli,All Other
+142,SKUDESC142,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+143,SKUDESC143,Permiter,Deli and Foodservice,Service Deli,All Other
+144,SKUDESC144,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+145,SKUDESC145,Center,Grocery,Crackers,Rice Cakes
+146,SKUDESC146,Center,GM,Audio Video,Audio
+147,SKUDESC147,Center,GM,Audio Video,Video DVD
+148,SKUDESC148,Permiter,GM,Housewares,Beeding
+149,SKUDESC149,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+150,SKUDESC150,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+151,SKUDESC151,Permiter,Deli and Foodservice,Service Deli,All Other
+152,SKUDESC152,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+153,SKUDESC153,Permiter,Deli and Foodservice,Service Deli,All Other
+154,SKUDESC154,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+155,SKUDESC155,Center,Grocery,Crackers,Rice Cakes
+156,SKUDESC156,Center,GM,Audio Video,Audio
+157,SKUDESC157,Center,GM,Audio Video,Video DVD
+158,SKUDESC158,Permiter,GM,Housewares,Beeding
+159,SKUDESC159,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+160,SKUDESC160,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+161,SKUDESC161,Permiter,Deli and Foodservice,Service Deli,All Other
+162,SKUDESC162,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+163,SKUDESC163,Permiter,Deli and Foodservice,Service Deli,All Other
+164,SKUDESC164,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+165,SKUDESC165,Center,Grocery,Crackers,Rice Cakes
+166,SKUDESC166,Center,GM,Audio Video,Audio
+167,SKUDESC167,Center,GM,Audio Video,Video DVD
+168,SKUDESC168,Permiter,GM,Housewares,Beeding
+169,SKUDESC169,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+170,SKUDESC170,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+171,SKUDESC171,Permiter,Deli and Foodservice,Service Deli,All Other
+172,SKUDESC172,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+173,SKUDESC173,Permiter,Deli and Foodservice,Service Deli,All Other
+174,SKUDESC174,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+175,SKUDESC175,Center,Grocery,Crackers,Rice Cakes
+176,SKUDESC176,Center,GM,Audio Video,Audio
+177,SKUDESC177,Center,Grocery,Crackers,Rice Cakes
+178,SKUDESC178,Center,GM,Audio Video,Audio
+179,SKUDESC179,Center,GM,Audio Video,Video DVD
+180,SKUDESC180,Permiter,GM,Housewares,Beeding
+181,SKUDESC181,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+182,SKUDESC182,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+183,SKUDESC183,Permiter,Deli and Foodservice,Service Deli,All Other
+184,SKUDESC184,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+185,SKUDESC185,Permiter,Deli and Foodservice,Service Deli,All Other
+186,SKUDESC186,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+187,SKUDESC187,Center,Grocery,Crackers,Rice Cakes
+188,SKUDESC188,Center,GM,Audio Video,Audio
+189,SKUDESC189,Center,GM,Audio Video,Video DVD
+190,SKUDESC190,Permiter,GM,Housewares,Beeding
+191,SKUDESC191,Permiter,Seafood,Frozen Shellfish,Frozen Shellfish
+192,SKUDESC192,Permiter,Floral,Bouquets and Cut Flowers,Bouquets and Cut Flowers
+193,SKUDESC193,Permiter,Deli and Foodservice,Service Deli,All Other
+194,SKUDESC194,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+195,SKUDESC195,Permiter,Deli and Foodservice,Service Deli,All Other
+196,SKUDESC196,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
+197,SKUDESC197,Center,Grocery,Crackers,Rice Cakes
+198,SKUDESC198,Center,GM,Audio Video,Audio
+199,SKUDESC199,Center,Frozen,Frozen Bake,Bread or Dough Products Frozen
