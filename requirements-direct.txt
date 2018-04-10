@@ -1,2 +1,4 @@
-falcon>=1.4.1 # Apache-2.0
-oslo.config==6.0.1
+falcon==1.4.1 # Apache-2.0
+oslo.config==6.0.1 # Apache-2.0
+PasteDeploy==1.5.2 # MIT
+Paste==2.0.3 # MIT
