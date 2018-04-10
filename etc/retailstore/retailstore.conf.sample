@@ -1,0 +1,18 @@
+[DEFAULT]
+
+#
+# From retailstore.conf
+#
+
+# Just some config options (integer value)
+#some_default_option = 10
+
+
+[database]
+
+#
+# From retailstore.conf
+#
+
+# The URI database connect string. (string value)
+#database_connect_string = <None>
