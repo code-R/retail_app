@@ -1,2 +1,3 @@
-tox
-flake8
+tox==3.0.0
+flake8==3.5.0
+Werkzeug==0.14.1

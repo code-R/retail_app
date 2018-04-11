@@ -1,3 +1,6 @@
+# retailstore conf file
+etc/retailstore/retailstore.conf
+
 # Mac ignore ds_store
 *.DS_Store
 

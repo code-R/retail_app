@@ -6,10 +6,25 @@ class AppConfig(object):
 
     # Default options
     options = [
+        cfg.StrOpt(
+            'bind_host',
+            default='0.0.0.0',
+            help='The host IP to bind to'
+        ),
+        cfg.IntOpt(
+            'bind_port',
+            default=9000,
+            help='The port to bind to'
+        ),
         cfg.IntOpt(
             'some_default_option',
             default=10,
             help='Just some config options'
+        ),
+        cfg.StrOpt(
+            'api_paste_config',
+            default='api-paste.ini',
+            help="The API paste config file to use"
         ),
     ]
 

@@ -4,8 +4,17 @@
 # From retailstore.conf
 #
 
+# The host IP to bind to (string value)
+#bind_host = 0.0.0.0
+
+# The port to bind to (integer value)
+#bind_port = 9000
+
 # Just some config options (integer value)
 #some_default_option = 10
+
+# The API paste config file to use (string value)
+#api_paste_config = api-paste.ini
 
 
 [database]
