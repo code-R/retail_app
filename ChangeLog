@@ -1,6 +1,8 @@
 CHANGES
 =======
 
+* test travis build
+* added pytest and coverage
 * update setup.py with pbr and README
 * Added basic runserver and simple api endpoint
 * basic paste + runserver

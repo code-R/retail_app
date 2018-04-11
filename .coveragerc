@@ -4,9 +4,7 @@ source = retailstore
 omit =
     tests/*
     retailstore/conf/*
-    retailstore/errors.py
     retailstore/server.py
-    retailstore/util.py
 
 [report]
 ignore_errors = True

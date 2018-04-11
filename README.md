@@ -1,3 +1,5 @@
+|Build Status| |License: MIT| |3.5|
+
 # retail_app
 This is a sample app for trying few things
 
@@ -24,3 +26,8 @@ Run dev server
 python run_server.py
 
 curl -H "X-Auth-Token:open-sesame"  http://127.0.0.1:9000/api/v1.0/things
+
+
+
+
+.. |Build Status| image:: https://api.travis-ci.org/code-R/retail_app.svg?branch=master
