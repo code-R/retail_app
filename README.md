@@ -18,3 +18,9 @@ python setup.py develop
 Create default conf file using oslo config generator
 
 tox -e genconfig
+
+Run dev server
+
+python run_server.py
+
+curl -H "X-Auth-Token:open-sesame"  http://127.0.0.1:9000/api/v1.0/things

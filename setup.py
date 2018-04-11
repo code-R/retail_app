@@ -1,18 +1,10 @@
-from setuptools import setup, find_packages
+import setuptools
 
-setup(
-    name='retailstore',
-    version='0.1',
-    description='Retail Store Rest Api',
-    url='http://github.com/code-R/retail_app',
-    author='Vamsi - Vamsi Krishna',
-    license='MIT',
-    packages=find_packages(),
-    package_data={
-        '': ['data/*.csv'],
-    },
-    entry_points={
-        'oslo.config.opts':
-        'retailstore.conf = retailstore.conf.config:list_opts',
-    },
-)
+try:
+    import multiprocessing  # noqa
+except ImportError:
+    pass
+
+setuptools.setup(
+    setup_requires=['pbr>=2.0.0'],
+    pbr=True)

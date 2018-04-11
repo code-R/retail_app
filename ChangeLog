@@ -1,0 +1,8 @@
+CHANGES
+=======
+
+* Added basic runserver and simple api endpoint
+* basic paste + runserver
+* Added tox and oslo config for retailstore
+* Create initial directory setup with falcon framework
+* Initial commit
