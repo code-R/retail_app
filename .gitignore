@@ -1,3 +1,6 @@
+# pytest cache
+.pytest_cache/*
+
 # retailstore conf file
 etc/retailstore/retailstore.conf
 

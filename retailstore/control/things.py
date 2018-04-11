@@ -1,8 +1,17 @@
-import falcon
 import json
+import falcon
 
 
-class ThingsResource(object):
+class BaseResource(object):
+    def to_json(self, body_dict):
+        """
+        Thin wrapper around json.dumps.
+
+        providing the default=str config.
+        """
+        return json.dumps(body_dict, default=str)
+
+class ThingsResource(BaseResource):
 
     def on_get(self, req, resp):
         doc = {
@@ -12,11 +21,5 @@ class ThingsResource(object):
                 }
             ]
         }
-
-        # Create a JSON representation of the resource
-        resp.body = json.dumps(doc, ensure_ascii=False)
-
-        # The following line can be omitted because 200 is the default
-        # status returned by the framework, but it is included here to
-        # illustrate how this may be overridden as needed.
+        resp.body = self.to_json(doc)
         resp.status = falcon.HTTP_200
