@@ -28,6 +28,10 @@ python run_server.py
 curl -H "X-Auth-Token:open-sesame"  http://127.0.0.1:9000/api/v1.0/things
 
 
+running migrations
+
+alembic upgrade head
+
 
 
 .. |Build Status| image:: https://api.travis-ci.org/code-R/retail_app.svg?branch=master
