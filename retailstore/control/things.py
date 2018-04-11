@@ -1,15 +1,7 @@
-import json
 import falcon
 
+from retailstore.control.base import BaseResource
 
-class BaseResource(object):
-    def to_json(self, body_dict):
-        """
-        Thin wrapper around json.dumps.
-
-        providing the default=str config.
-        """
-        return json.dumps(body_dict, default=str)
 
 class ThingsResource(BaseResource):
 

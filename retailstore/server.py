@@ -1,12 +1,16 @@
 import os
 import falcon
 
-from retailstore.control.things import ThingsResource
+from retailstore.control import(
+    things,
+    locations,
+)
 from retailstore import errors
 
 def configure_app(app, version=''):
     v1_0_routes = [
-        ('things', ThingsResource()),
+        ('things', things.ThingsResource()),
+        ('locations', locations.LocationsResource()),
     ]
 
     for path, res in v1_0_routes:
