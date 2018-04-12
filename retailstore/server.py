@@ -1,16 +1,18 @@
 import os
+
 import falcon
+from falcon_marshmallow import Marshmallow
 
 from retailstore.control import(
-    things,
     locations,
 )
 from retailstore import errors
 
+
 def configure_app(app, version=''):
     v1_0_routes = [
-        ('things', things.ThingsResource()),
-        ('locations', locations.LocationsResource()),
+        ('locations', locations.CollectionResource()),
+        ('locations/{location_id}', locations.ItemResource()),
     ]
 
     for path, res in v1_0_routes:
@@ -22,6 +24,9 @@ def configure_app(app, version=''):
 
 # Initialization compatible with PasteDeploy
 def api_app_factory(global_conf, disable=None):
-    app = falcon.API()
+    middlewares = [
+        Marshmallow(),
+    ]
+    app = falcon.API(middleware=middlewares)
     wsgi_callable = configure_app(app, 'v1.0'),
     return wsgi_callable

@@ -8,7 +8,6 @@ def get_version_from_request(req):
             return part
     return 'N/A'
 
-
 def format_error_resp(req,
                       resp,
                       status_code=falcon.HTTP_500,
@@ -93,11 +92,46 @@ def default_exception_handler(ex, req, resp, params):
     if isinstance(ex, falcon.HTTPError):
         # Allow the falcon http errors to bubble up and get handled.
         raise ex
+    elif isinstance(ex, RetailStoreException):
+        status_code = ex.code
+        message = ex.message
     else:
-        # Take care of the uncaught stuff.
-        format_error_resp(
-            req,
-            resp,
-            error_type=ex.__class__.__name__,
-            message="Unhandled Exception raised: %s" % str(ex)
-        )
+        status_code = falcon.HTTP_500
+        message = "Unhandled Exception raised: %s" % str(ex)
+
+    format_error_resp(
+        req,
+        resp,
+        status_code=status_code,
+        error_type=ex.__class__.__name__,
+        message=message
+    )
+
+
+class RetailStoreException(Exception):
+    """Base RetailStore Exception."""
+
+    msg_fmt = "An unknown exception occurred."
+    code = falcon.HTTP_500
+
+    def __init__(self, message=None, **kwargs):
+        kwargs.setdefault('code', RetailStoreException.code)
+
+        if not message:
+            try:
+                message = self.msg_fmt % kwargs
+            except Exception:
+                message = self.msg_fmt
+
+        self.message = message
+        super(RetailStoreException, self).__init__(message)
+
+    def format_message(self):
+        return self.args[0]
+
+
+class LocationNotFound(RetailStoreException):
+    """The Location cannot be found or doesn't exist."""
+
+    msg_fmt = "The requested location=%(location_id)s was not found."
+    code = falcon.HTTP_404
