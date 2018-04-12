@@ -1,0 +1,1 @@
+docker build -t rstore:trusty -f images/retailstore/Dockerfile .

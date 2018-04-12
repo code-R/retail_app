@@ -7,3 +7,4 @@ PyYAML==3.12
 alembic==0.9.9
 psycopg2-binary==2.7.4
 oslo.db==4.35.0
+uWSGI==2.0.17

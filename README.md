@@ -32,6 +32,6 @@ running migrations
 
 alembic upgrade head
 
-
+docker run --name rstore -it --entrypoint /bin/bash --user root rstore:trusty
 
 .. |Build Status| image:: https://api.travis-ci.org/code-R/retail_app.svg?branch=master
