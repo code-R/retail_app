@@ -3,7 +3,7 @@ import os
 import falcon
 from falcon_marshmallow import Marshmallow
 
-from retailstore.control import(
+from retailstore.control import (
     locations,
     departments,
 )

@@ -1,6 +1,13 @@
 CHANGES
 =======
 
+* cleaning up location and department controllers
+* added departments model and rest api
+* Implemented put, post and delete actions
+* Added serializers for location api
+* Create dockerfile for the application
+* Add basic rest api for location resource
+* Added location model and alembic
 * test travis build
 * added pytest and coverage
 * update setup.py with pbr and README
