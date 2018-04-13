@@ -142,3 +142,11 @@ class DepartmentNotFound(RetailStoreException):
 
     msg_fmt = "The requested department=%(department_id)s was not found."
     code = falcon.HTTP_404
+
+
+class DepartmentLocationMismatch(RetailStoreException):
+    """docstring for DepartmentLocationMismatch."""
+
+    msg_fmt = "The requested department=%(department_id)s and " \
+              "location=%(location_id)s doesn't match"
+    code = falcon.HTTP_400
