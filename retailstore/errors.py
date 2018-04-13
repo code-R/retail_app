@@ -135,3 +135,10 @@ class LocationNotFound(RetailStoreException):
 
     msg_fmt = "The requested location=%(location_id)s was not found."
     code = falcon.HTTP_404
+
+
+class DepartmentNotFound(RetailStoreException):
+    """The Location cannot be found or doesn't exist."""
+
+    msg_fmt = "The requested department=%(department_id)s was not found."
+    code = falcon.HTTP_404

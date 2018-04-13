@@ -6,6 +6,7 @@ from sqlalchemy import (
     Boolean,
     Column,
     DateTime,
+    Integer,
 )
 
 class BaseModel(models.ModelBase, models.TimestampMixin):
@@ -16,6 +17,7 @@ class BaseModel(models.ModelBase, models.TimestampMixin):
     __protected_attributes__ = set([
         "created_at", "updated_at", "deleted_at", "deleted"])
 
+    id = Column(Integer, primary_key=True)
     created_at = Column(DateTime, default=lambda: timeutils.utcnow(),
                         nullable=False)
     updated_at = Column(DateTime, default=lambda: timeutils.utcnow(),
