@@ -3,6 +3,7 @@ from sqlalchemy import (
     ForeignKey,
     Integer,
     String,
+    Text,
 )
 from sqlalchemy.ext import declarative
 from sqlalchemy.orm import relationship
@@ -15,6 +16,8 @@ Base = declarative.declarative_base()
 class Location(Base, BaseModel):
     __tablename__ = 'locations'
     name = Column(String(36), unique=True)
+    description = Column(Text())
+
     departments = relationship("Department")
 
 
@@ -22,6 +25,7 @@ class Department(Base, BaseModel):
     __tablename__ = 'departments'
 
     name = Column(String(36), unique=True)
+    description = Column(Text())
     location_id = Column(
         Integer,
         ForeignKey('locations.id', ondelete='CASCADE'),

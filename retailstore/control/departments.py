@@ -9,8 +9,9 @@ class CollectionResource(BaseResource):
     get_schema = DepartmentSchema(many=True)
     post_schema = DepartmentSchema()
 
-    def on_get(self, req, resp, department_id):
-        departments = self.orm_session.query(Department).all()
+    def on_get(self, req, resp, location_id):
+        departments = self.orm_session.query(
+            Department).filter_by(location_id=location_id).all()
         req.context['result'] = departments
 
     def on_post(self, req, resp, location_id):

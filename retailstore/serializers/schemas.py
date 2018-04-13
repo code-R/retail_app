@@ -6,9 +6,13 @@ class BaseSchema(Schema):
 
 
 class LocationSchema(BaseSchema):
-    name = fields.String()
+    name = fields.String(required=True)
+    description = fields.String()
+    created_at = fields.DateTime(attribute="created_at")
 
 
 class DepartmentSchema(BaseSchema):
-    name = fields.String()
+    name = fields.String(required=True)
+    description = fields.String()
+    created_at = fields.DateTime(attribute="created_at")
     location_id = fields.Integer()
