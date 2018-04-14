@@ -17,7 +17,6 @@ class Location(Base, BaseModel):
     __tablename__ = 'locations'
     name = Column(String(36), unique=True)
     description = Column(Text())
-
     departments = relationship("Department")
 
 
@@ -29,4 +28,28 @@ class Department(Base, BaseModel):
     location_id = Column(
         Integer,
         ForeignKey('locations.id', ondelete='CASCADE'),
+        nullable=False)
+    categories = relationship("Category")
+
+
+class Category(Base, BaseModel):
+    __tablename__ = 'categories'
+
+    name = Column(String(36), unique=True)
+    description = Column(Text())
+    department_id = Column(
+        Integer,
+        ForeignKey('departments.id', ondelete='CASCADE'),
+        nullable=False)
+    sub_categories = relationship("SubCategory")
+
+
+class SubCategory(Base, BaseModel):
+    __tablename__ = 'sub_categories'
+
+    name = Column(String(36), unique=True)
+    description = Column(Text())
+    category_id = Column(
+        Integer,
+        ForeignKey('categories.id', ondelete='CASCADE'),
         nullable=False)
