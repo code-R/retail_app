@@ -1,2 +1,9 @@
-export CONFIG_DIR=/Users/vamsis/projects/personal/retail_app/etc/retailstore
+export CONF_FILE=/Users/vamsis/projects/personal/retail_app/etc/retailstore/retailstore.conf
 export STORE_DB_URL=postgresql://root:root@localhost/retail_store
+
+export DB_FQDN=localhost
+export DB_NAME=retail_store
+export DB_ADMIN_USER=vamsis
+export ADMIN_DB=postgres
+export DB_SERVICE_USER=root
+export DB_SERVICE_PASSWORD=root

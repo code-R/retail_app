@@ -1,5 +1,5 @@
 import falcon
-import yaml
+import json
 
 def get_version_from_request(req):
     """Attempt to extract the API version string."""
@@ -80,7 +80,7 @@ def format_error_resp(req,
         'retry': True if status_code is falcon.HTTP_500 else False
     }
 
-    resp.body = yaml.safe_dump(error_response)
+    resp.body = json.dumps(error_response)
     resp.status = status_code
 
 
@@ -89,6 +89,7 @@ def default_exception_handler(ex, req, resp, params):
 
     If this is a standard falcon HTTPError
     """
+
     if isinstance(ex, falcon.HTTPError):
         # Allow the falcon http errors to bubble up and get handled.
         raise ex
@@ -97,7 +98,7 @@ def default_exception_handler(ex, req, resp, params):
         message = ex.message
     else:
         status_code = falcon.HTTP_500
-        message = "Unhandled Exception raised: %s" % str(ex)
+        message = "Unhandled Exception raised: %s" % str(ex.__repr__())
 
     format_error_resp(
         req,
@@ -144,9 +145,8 @@ class DepartmentNotFound(RetailStoreException):
     code = falcon.HTTP_404
 
 
-class DepartmentLocationMismatch(RetailStoreException):
-    """docstring for DepartmentLocationMismatch."""
+class DuplicationLocation(RetailStoreException):
+    """The Location cannot be found or doesn't exist."""
 
-    msg_fmt = "The requested department=%(department_id)s and " \
-              "location=%(location_id)s doesn't match"
+    msg_fmt = "Unable to save Location data because of invalid data."
     code = falcon.HTTP_400

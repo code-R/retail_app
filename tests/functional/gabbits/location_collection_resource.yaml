@@ -1,0 +1,26 @@
+tests:
+  - name: Locations index action with out data
+    desc: Initially there is no data so data length is 0
+    GET: /api/v1.0/locations
+    status: 200
+    response_json_paths:
+      $.`len`: 0
+
+  - name: Locations create action
+    desc: Should create location
+    POST: /api/v1.0/locations
+    data: <@resources/valid_location.json
+    status: 204
+
+  - name: Locations index action with data
+    desc: Should return 1 location
+    GET: /api/v1.0/locations
+    status: 200
+    response_json_paths:
+      $.`len`: 1
+
+  - name: Locations create with duplicate data
+    desc: Should create location
+    POST: /api/v1.0/locations
+    data: <@resources/valid_location.json
+    status: 400

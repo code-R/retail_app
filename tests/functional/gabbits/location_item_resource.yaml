@@ -1,0 +1,37 @@
+tests:
+  - name: Locations show action (404)
+    desc: Should return location not found
+    GET: /api/v1.0/locations/0
+    status: 404
+
+  - name: This test has no relavence
+    desc: In order to collect location id to use in next gabbit, we need this
+    GET: /api/v1.0/locations
+    status: 200
+    response_json_paths:
+      $.[0].name: Perimeter
+
+  - name: Locations show action
+    desc: Should return a valid location response
+    GET: /api/v1.0/locations/$RESPONSE['$.[0].id']
+    status: 200
+    response_json_paths:
+      $.name: Perimeter
+
+  - name: Locations update action
+    desc: Should update location resource
+    PUT: /api/v1.0/locations/$RESPONSE['$.id']
+    data: <@resources/update_location.json
+    status: 204
+
+  - name: Test update action
+    desc: Check if the data is updated from previous action
+    GET: /api/v1.0/locations
+    status: 200
+    response_json_paths:
+      $.[0].name: UpdatedPerimeter
+
+  - name: Locations destroy action
+    desc: Should destroy location resource
+    DELETE: /api/v1.0/locations/$RESPONSE['$.[0].id']
+    status: 202

@@ -1,0 +1,13 @@
+tests:
+  - name: Health Check
+    desc: Health Check Api
+    GET: /api/v1.0/health
+    status: 204
+    response_headers: null
+
+  - name: Health Check 2
+    desc: Health Check Api
+    DELETE: /api/v1.0/health
+    status: 405
+    response_headers: null
+

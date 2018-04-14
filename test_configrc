@@ -1,0 +1,11 @@
+export CONF_FILE=/Users/vamsis/projects/personal/retail_app/etc/retailstore/test_retailstore.conf
+export STORE_DB_URL=postgresql://test:test@localhost/retail_test
+
+export DB_FQDN=localhost
+export DB_NAME=retail_test
+export DB_ADMIN_USER=vamsis
+export ADMIN_DB=postgres
+export DB_SERVICE_USER=test
+export DB_SERVICE_PASSWORD=test
+
+export TEST_URL=http://localhost:8000/

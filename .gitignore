@@ -1,3 +1,6 @@
+# Gabbit results
+results/*
+
 # pytest cache
 .pytest_cache/*
 
