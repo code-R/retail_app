@@ -8,7 +8,6 @@ from retailstore.db.sqlalchemy.models import (
 from retailstore.errors import (
     LocationNotFound,
     DepartmentNotFound,
-    DepartmentLocationMismatch,
 )
 
 
@@ -27,12 +26,9 @@ class BaseResource(object):
 
     def _get_department(self, location_id, department_id):
         try:
-            department = self.orm_session.query(
-                Department).filter_by(id=department_id).one()
+            department = self.orm_session.query(Department).filter_by(
+                id=department_id, location_id=location_id).one()
         except orm.exc.NoResultFound:
             raise DepartmentNotFound(location_id=location_id)
-
-        if location_id != department.location_id:
-            raise DepartmentLocationMismatch(location_id, department_id)
 
         return department

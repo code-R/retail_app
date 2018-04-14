@@ -6,12 +6,14 @@ from falcon_marshmallow import Marshmallow
 from retailstore.control import (
     locations,
     departments,
+    health,
 )
 from retailstore import errors
 
 
 def configure_app(app, version=''):
     v1_0_routes = [
+        ('health', health.HealthResource()),
         ('locations', locations.CollectionResource()),
         ('locations/{location_id}', locations.ItemResource()),
         (
