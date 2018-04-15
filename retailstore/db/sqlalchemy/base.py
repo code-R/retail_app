@@ -11,6 +11,7 @@ from sqlalchemy import (
 )
 
 from retailstore.errors import ResourceNotFound
+from retailstore.db.sqlalchemy.query_generator import QueryGenerator
 
 
 class BaseModel(models.ModelBase, models.TimestampMixin):
@@ -31,26 +32,15 @@ class BaseModel(models.ModelBase, models.TimestampMixin):
     deleted_at = Column(DateTime, nullable=True)
     deleted = Column(Boolean, nullable=False, default=False)
 
-    DataMapper = {
-        'locations': 'location_id',
-        'departments': 'department_id',
-        'categories': 'category_id',
-        'sub_categories': 'sub_category_id',
-    }
-
     @classmethod
     def _fetch_resources_query(cls, session, **kwargs):
-        query = session.query(cls)
+        qg = QueryGenerator(cls, session, **kwargs)
+        return qg.resources_query()
 
-        for join_model in cls.join_models:
-            query = query.join(join_model)
-
-        condition = []
-        for model in cls.join_models:
-            key = cls.DataMapper[model.__tablename__]
-            condition.append(getattr(model, 'id') == kwargs[key])
-
-        return query.filter(*condition)
+    @classmethod
+    def _fetch_resource_query(cls, session, **kwargs):
+        qg = QueryGenerator(cls, session, **kwargs)
+        return qg.resource_query()
 
     @classmethod
     def fetch_resources(cls, session, **kwargs):
@@ -62,6 +52,6 @@ class BaseModel(models.ModelBase, models.TimestampMixin):
         query = cls._fetch_resources_query(session, **kwargs)
 
         try:
-            return query.filter(cls.id == kwargs['id']).one()
+            return query.one()
         except orm.exc.NoResultFound:
             raise ResourceNotFound(message='this is my message, make it btter')
