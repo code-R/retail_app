@@ -15,6 +15,7 @@ class Location(Base, BaseModel):
     __tablename__ = 'locations'
 
     departments = relationship("Department")
+    join_models = []
 
 
 class Department(Base, BaseModel):
@@ -25,6 +26,7 @@ class Department(Base, BaseModel):
         ForeignKey('locations.id', ondelete='CASCADE'),
         nullable=False)
     categories = relationship("Category")
+    join_models = [Location]
 
 
 class Category(Base, BaseModel):
@@ -35,7 +37,7 @@ class Category(Base, BaseModel):
         ForeignKey('departments.id', ondelete='CASCADE'),
         nullable=False)
     sub_categories = relationship("SubCategory")
-
+    join_models = [Department, Location]
 
 class SubCategory(Base, BaseModel):
     __tablename__ = 'sub_categories'
@@ -44,3 +46,4 @@ class SubCategory(Base, BaseModel):
         Integer,
         ForeignKey('categories.id', ondelete='CASCADE'),
         nullable=False)
+    join_models = [Category, Department, Location]

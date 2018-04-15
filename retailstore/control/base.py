@@ -25,8 +25,7 @@ class BaseResource(object):
 
 class CollectionBase(BaseResource):
     def on_get(self, req, resp, *args, **kwargs):
-        resources = self.orm_session.query(
-            self.orm_model).filter_by(**kwargs).all()
+        resources = self.orm_model.fetch_resources(self.orm_session, **kwargs)
         req.context['result'] = resources
 
     def on_post(self, req, resp, *args, **kwargs):
