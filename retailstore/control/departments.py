@@ -10,6 +10,7 @@ class CollectionResource(CollectionBase):
     get_schema = DepartmentSchema(many=True)
     post_schema = DepartmentSchema()
     orm_model = Department
+    relationship_key = 'location_id'
 
 
 class ItemResource(ItemResourceBase):

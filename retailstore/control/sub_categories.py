@@ -10,6 +10,7 @@ class CollectionResource(CollectionBase):
     get_schema = SubCategorySchema(many=True)
     post_schema = SubCategorySchema()
     orm_model = SubCategory
+    relationship_key = 'category_id'
 
 
 class ItemResource(ItemResourceBase):

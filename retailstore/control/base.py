@@ -21,8 +21,10 @@ class CollectionBase(BaseResource):
         req.context['result'] = resources
 
     def on_post(self, req, resp, *args, **kwargs):
-        resource_dict = req.context['json']
-        resource_dict.update(kwargs)
+        resource_dict = req.context['json'].copy()
+        if hasattr(self, 'relationship_key'):
+            resource_dict[self.relationship_key] = \
+                kwargs[self.relationship_key]
         resource = self.orm_model(**resource_dict)
         self.orm_session.add(resource)
         try:
