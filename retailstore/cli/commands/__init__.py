@@ -1,1 +1,1 @@
-from .csv_import import *
+from .csv_import import * # noqa

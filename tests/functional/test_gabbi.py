@@ -17,8 +17,10 @@ def purge_data():
         session.execute(table.delete())
     session.commit()
 
+
 # Make sure we start with empty database
 purge_data()
+
 def pytest_generate_tests(metafunc):
     test_dir = os.path.join(os.path.dirname(__file__), TESTS_DIR)
     driver.py_test_generator(

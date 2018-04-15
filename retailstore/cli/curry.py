@@ -27,7 +27,8 @@ def location_srv(data):
 
 def department_srv(data):
     replicated_data = data.copy()
-    dep_obj = _get_one_or_create(Department, name=replicated_data['DEPARTMENT'])
+    dep_obj = _get_one_or_create(
+        Department, name=replicated_data['DEPARTMENT'])
     dep_obj.location_id = replicated_data['location_id']
     session.add(dep_obj)
     session.commit()
@@ -45,7 +46,8 @@ def category_srv(data):
 
 def sub_category_srv(data):
     replicated_data = data.copy()
-    dep_obj = _get_one_or_create(SubCategory, name=replicated_data['SUBCATEGORY'])
+    dep_obj = _get_one_or_create(
+        SubCategory, name=replicated_data['SUBCATEGORY'])
     dep_obj.category_id = replicated_data['category_id']
     session.add(dep_obj)
     session.commit()

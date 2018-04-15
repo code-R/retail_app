@@ -1,6 +1,17 @@
 CHANGES
 =======
 
+* Fix few minor issues found while testing
+* Implemneted rest api for category and sub\_category
+* Fix querying for nested resources
+* Refactoring: move most of the logic in to base classes
+* add docker ignore file
+* Implemented hiera resource (for d3 hierarchial tree)
+* Added cli to import the data from csv to DB
+* Added gabbit for functional tests
+* Fix few issues (found while testing in frontend)
+* added description to models and serializers
+* fix pep8
 * cleaning up location and department controllers
 * added departments model and rest api
 * Implemented put, post and delete actions
