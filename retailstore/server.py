@@ -8,6 +8,8 @@ from retailstore.control import (
     departments,
     health,
     hiera,
+    categories,
+    sub_categories,
 )
 from retailstore import errors
 
@@ -25,6 +27,25 @@ def configure_app(app, version=''):
         (
             'locations/{location_id}/departments/{department_id}',
             departments.ItemResource()
+        ),
+        (
+            'locations/{location_id}/departments/{department_id}/categories',
+            categories.CollectionResource()
+        ),
+        (
+            ('locations/{location_id}/departments/{department_id}'
+                '/categories/{category_id}'),
+            categories.ItemResource()
+        ),
+        (
+            ('locations/{location_id}/departments/{department_id}/categories/'
+                '{category_id}/sub_categories'),
+            sub_categories.CollectionResource()
+        ),
+        (
+            ('locations/{location_id}/departments/{department_id}/categories/'
+                '{category_id}/sub_categories/{sub_category_id}'),
+            sub_categories.ItemResource()
         ),
     ]
 

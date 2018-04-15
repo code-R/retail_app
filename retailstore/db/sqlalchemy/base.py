@@ -1,7 +1,5 @@
 from oslo_db.sqlalchemy import models
 from oslo_utils import timeutils
-
-
 from sqlalchemy import (
     Boolean,
     Column,
@@ -9,7 +7,11 @@ from sqlalchemy import (
     Integer,
     String,
     Text,
+    orm,
 )
+
+from retailstore.errors import ResourceNotFound
+
 
 class BaseModel(models.ModelBase, models.TimestampMixin):
     """Base class for Retail Store Models."""
@@ -37,7 +39,7 @@ class BaseModel(models.ModelBase, models.TimestampMixin):
     }
 
     @classmethod
-    def fetch_resources(cls, session, **kwargs):
+    def _fetch_resources_query(cls, session, **kwargs):
         query = session.query(cls)
 
         for join_model in cls.join_models:
@@ -48,4 +50,18 @@ class BaseModel(models.ModelBase, models.TimestampMixin):
             key = cls.DataMapper[model.__tablename__]
             condition.append(getattr(model, 'id') == kwargs[key])
 
-        return query.filter(*condition).all()
+        return query.filter(*condition)
+
+    @classmethod
+    def fetch_resources(cls, session, **kwargs):
+        query = cls._fetch_resources_query(session, **kwargs)
+        return query.all()
+
+    @classmethod
+    def fetch_resource(cls, session, **kwargs):
+        query = cls._fetch_resources_query(session, **kwargs)
+
+        try:
+            return query.filter(cls.id == kwargs['id']).one()
+        except orm.exc.NoResultFound:
+            raise ResourceNotFound(message='this is my message, make it btter')

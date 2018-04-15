@@ -1,10 +1,8 @@
 import falcon
-from sqlalchemy import orm
 from sqlalchemy.exc import IntegrityError
 
 from retailstore.db.sqlalchemy import api as db_api
 from retailstore.errors import (
-    ResourceNotFound,
     DuplicationResource,
 )
 
@@ -14,13 +12,7 @@ class BaseResource(object):
         self.orm_session = db_api.get_session()
 
     def _get_resource(self, *args, **kwargs):
-        try:
-            resource = self.orm_session.query(
-                self.orm_model).filter_by(**kwargs).one()
-        except orm.exc.NoResultFound:
-            raise ResourceNotFound(message='this is my message, make it btter')
-
-        return resource
+        return self.orm_model.fetch_resource(self.orm_session, **kwargs)
 
 
 class CollectionBase(BaseResource):

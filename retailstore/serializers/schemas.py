@@ -3,13 +3,12 @@ from marshmallow import fields, Schema
 
 class BaseSchema(Schema):
     id = fields.Integer()
-
-
-class LocationSchema(BaseSchema):
     name = fields.String(required=True)
     description = fields.String()
     created_at = fields.DateTime(attribute="created_at")
 
+
+class LocationSchema(BaseSchema):
     def hiera_data(self, location):
         res = {
             'name': location.name,
@@ -26,9 +25,6 @@ class LocationSchema(BaseSchema):
 
 
 class DepartmentSchema(BaseSchema):
-    name = fields.String(required=True)
-    description = fields.String()
-    created_at = fields.DateTime(attribute="created_at")
     location_id = fields.Integer()
 
     def hiera_data(self, department):
@@ -47,9 +43,6 @@ class DepartmentSchema(BaseSchema):
 
 
 class CategorySchema(BaseSchema):
-    name = fields.String(required=True)
-    description = fields.String()
-    created_at = fields.DateTime(attribute="created_at")
     department_id = fields.Integer()
 
     def hiera_data(self, category):
@@ -68,7 +61,4 @@ class CategorySchema(BaseSchema):
 
 
 class SubCategorySchema(BaseSchema):
-    name = fields.String(required=True)
-    description = fields.String()
-    created_at = fields.DateTime(attribute="created_at")
     category_id = fields.Integer()
