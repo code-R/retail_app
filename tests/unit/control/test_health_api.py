@@ -1,10 +1,12 @@
 import falcon
+from sqlalchemy.orm import sessionmaker
 
 from retailstore.control.health import HealthResource
 
 
 def test_get_health(mocker):
-    api = HealthResource()
+    session = mocker.MagicMock(sessionmaker)
+    api = HealthResource(session)
 
     # Configure mocked request and response
     req = mocker.MagicMock(spec=falcon.Request)

@@ -72,7 +72,8 @@ def test_put_location(mocker):
     assert resp.status == falcon.HTTP_204
 
 def test_collection_properties(mocker):
-    api = locations.CollectionResource()
+    session = mocker.MagicMock(sessionmaker)
+    api = locations.CollectionResource(session)
 
     assert isinstance(api.get_schema, LocationSchema)
     assert isinstance(api.post_schema, LocationSchema)
@@ -80,7 +81,8 @@ def test_collection_properties(mocker):
     assert api.orm_model == Location
 
 def test_item_properties(mocker):
-    api = locations.ItemResource()
+    session = mocker.MagicMock(sessionmaker)
+    api = locations.ItemResource(session)
 
     assert isinstance(api.schema, LocationSchema)
     assert api.resource_key == 'location_id'

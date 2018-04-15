@@ -1,10 +1,13 @@
+from sqlalchemy.orm import sessionmaker
+
 from retailstore.control import departments
 from retailstore.db.sqlalchemy.models import Department
 from retailstore.serializers.schemas import DepartmentSchema
 
 
 def test_collection_properties(mocker):
-    api = departments.CollectionResource()
+    session = mocker.MagicMock(sessionmaker)
+    api = departments.CollectionResource(session)
 
     assert isinstance(api.get_schema, DepartmentSchema)
     assert isinstance(api.post_schema, DepartmentSchema)
@@ -12,7 +15,8 @@ def test_collection_properties(mocker):
     assert api.orm_model == Department
 
 def test_item_properties(mocker):
-    api = departments.ItemResource()
+    session = mocker.MagicMock(sessionmaker)
+    api = departments.ItemResource(session)
 
     assert isinstance(api.schema, DepartmentSchema)
     assert api.resource_key == 'department_id'
