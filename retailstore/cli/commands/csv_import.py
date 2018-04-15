@@ -14,12 +14,11 @@ class StoreData:
         self.data = row
 
     def run(self):
-        tmp = sub_category_srv(
+        return sub_category_srv(
             category_srv(
                 department_srv(
                     location_srv(
                         self.data))))
-        return tmp
 
 
 class CsvImport(Base):

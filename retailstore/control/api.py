@@ -11,8 +11,10 @@ CONFIG_FILES = ['retailstore.conf']
 def _get_config_files(env=None):
     if env is None:
         env = os.environ
-    dirname = env.get('CONFIG_DIR', '/etc/retailstore').strip()
-    return [os.path.join(dirname, config_file) for config_file in CONFIG_FILES]
+
+    config_file = env.get(
+        'CONF_FILE', '/etc/retailstore/retailstore.conf').strip()
+    return [config_file]
 
 def init_application():
     """Main entry point for initializing the Store API service.
