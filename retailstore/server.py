@@ -7,6 +7,7 @@ from retailstore.control import (
     locations,
     departments,
     health,
+    hiera,
 )
 from retailstore import errors
 
@@ -16,6 +17,7 @@ def configure_app(app, version=''):
         ('health', health.HealthResource()),
         ('locations', locations.CollectionResource()),
         ('locations/{location_id}', locations.ItemResource()),
+        ('locations/{location_id}/hiera_data', hiera.ItemResource()),
         (
             'locations/{location_id}/departments',
             departments.CollectionResource()
