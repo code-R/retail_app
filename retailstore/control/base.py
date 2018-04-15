@@ -1,13 +1,11 @@
+import falcon
 from sqlalchemy import orm
+from sqlalchemy.exc import IntegrityError
 
 from retailstore.db.sqlalchemy import api as db_api
-from retailstore.db.sqlalchemy.models import (
-    Location,
-    Department,
-)
 from retailstore.errors import (
-    LocationNotFound,
-    DepartmentNotFound,
+    ResourceNotFound,
+    DuplicationResource,
 )
 
 
@@ -15,20 +13,59 @@ class BaseResource(object):
     def __init__(self):
         self.orm_session = db_api.get_session()
 
-    def _get_location(self, location_id):
+    def _get_resource(self, *args, **kwargs):
         try:
-            location = self.orm_session.query(
-                Location).filter_by(id=location_id).one()
+            resource = self.orm_session.query(
+                self.orm_model).filter_by(**kwargs).one()
         except orm.exc.NoResultFound:
-            raise LocationNotFound(location_id=location_id)
+            raise ResourceNotFound(message='this is my message, make it btter')
 
-        return location
+        return resource
 
-    def _get_department(self, location_id, department_id):
+
+class CollectionBase(BaseResource):
+    def on_get(self, req, resp, *args, **kwargs):
+        resources = self.orm_session.query(
+            self.orm_model).filter_by(**kwargs).all()
+        req.context['result'] = resources
+
+    def on_post(self, req, resp, *args, **kwargs):
+        resource_dict = req.context['json']
+        resource_dict.update(kwargs)
+        resource = self.orm_model(**resource_dict)
+        self.orm_session.add(resource)
         try:
-            department = self.orm_session.query(Department).filter_by(
-                id=department_id, location_id=location_id).one()
-        except orm.exc.NoResultFound:
-            raise DepartmentNotFound(location_id=location_id)
+            self.orm_session.commit()
+        except IntegrityError:
+            self.orm_session.rollback()
+            raise DuplicationResource(table=self.orm_model.__tablename__)
 
-        return department
+        resp.status = falcon.HTTP_204
+
+
+class ItemResourceBase(BaseResource):
+    def on_get(self, req, resp, *args, **kwargs):
+        query_dict = kwargs
+        query_dict['id'] = query_dict.pop(self.resource_key)
+        resource = self._get_resource(**query_dict)
+        req.context['result'] = resource
+
+    def on_delete(self, req, resp, *args, **kwargs):
+        query_dict = kwargs
+        query_dict['id'] = query_dict.pop(self.resource_key)
+        resource = self._get_resource(**query_dict)
+        self.orm_session.delete(resource)
+        self.orm_session.commit()
+        resp.status = falcon.HTTP_202
+
+    def on_put(self, req, resp, *args, **kwargs):
+        query_dict = kwargs
+        query_dict['id'] = query_dict.pop(self.resource_key)
+        resource = self._get_resource(**query_dict)
+        resource_dict = req.context['json']
+        resource_dict.update(kwargs)
+        resource.name = resource_dict['name']
+        resource.description = resource_dict['description']
+        self.orm_session.commit()
+        resp.status = falcon.HTTP_204
+        resp.location = req.path

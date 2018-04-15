@@ -2,8 +2,6 @@ from sqlalchemy import (
     Column,
     ForeignKey,
     Integer,
-    String,
-    Text,
 )
 from sqlalchemy.ext import declarative
 from sqlalchemy.orm import relationship
@@ -15,16 +13,13 @@ Base = declarative.declarative_base()
 
 class Location(Base, BaseModel):
     __tablename__ = 'locations'
-    name = Column(String(36), unique=True)
-    description = Column(Text())
+
     departments = relationship("Department")
 
 
 class Department(Base, BaseModel):
     __tablename__ = 'departments'
 
-    name = Column(String(36), unique=True)
-    description = Column(Text())
     location_id = Column(
         Integer,
         ForeignKey('locations.id', ondelete='CASCADE'),
@@ -35,8 +30,6 @@ class Department(Base, BaseModel):
 class Category(Base, BaseModel):
     __tablename__ = 'categories'
 
-    name = Column(String(36), unique=True)
-    description = Column(Text())
     department_id = Column(
         Integer,
         ForeignKey('departments.id', ondelete='CASCADE'),
@@ -47,8 +40,6 @@ class Category(Base, BaseModel):
 class SubCategory(Base, BaseModel):
     __tablename__ = 'sub_categories'
 
-    name = Column(String(36), unique=True)
-    description = Column(Text())
     category_id = Column(
         Integer,
         ForeignKey('categories.id', ondelete='CASCADE'),

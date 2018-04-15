@@ -14,6 +14,5 @@ class ItemResource(BaseResource):
         # schema.hiera_data(location)
         resp.status = falcon.HTTP_200
         res = schema.hiera_data(location)
-        import pdb; pdb.set_trace()  # breakpoint 0b528fb7 //
 
         resp.body = json.dumps(res)

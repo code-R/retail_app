@@ -131,22 +131,16 @@ class RetailStoreException(Exception):
         return self.args[0]
 
 
-class LocationNotFound(RetailStoreException):
-    """The Location cannot be found or doesn't exist."""
+class ResourceNotFound(RetailStoreException):
+    """The Resource cannot be found or doesn't exist."""
 
-    msg_fmt = "The requested location=%(location_id)s was not found."
+    msg_fmt = "The requested resource=%(resource_id)s was not found."
     code = falcon.HTTP_404
 
 
-class DepartmentNotFound(RetailStoreException):
-    """The Location cannot be found or doesn't exist."""
+class DuplicationResource(RetailStoreException):
+    """The Resource creation failed because of validation."""
 
-    msg_fmt = "The requested department=%(department_id)s was not found."
-    code = falcon.HTTP_404
-
-
-class DuplicationLocation(RetailStoreException):
-    """The Location cannot be found or doesn't exist."""
-
-    msg_fmt = "Unable to save Location data because of invalid data."
+    msg_fmt = "Unable to save Resource=%(table)s data" \
+              " because of invalid data."
     code = falcon.HTTP_400

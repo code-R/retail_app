@@ -7,6 +7,8 @@ from sqlalchemy import (
     Column,
     DateTime,
     Integer,
+    String,
+    Text,
 )
 
 class BaseModel(models.ModelBase, models.TimestampMixin):
@@ -18,6 +20,8 @@ class BaseModel(models.ModelBase, models.TimestampMixin):
         "created_at", "updated_at", "deleted_at", "deleted"])
 
     id = Column(Integer, primary_key=True)
+    name = Column(String(36), unique=True)
+    description = Column(Text())
     created_at = Column(DateTime, default=lambda: timeutils.utcnow(),
                         nullable=False)
     updated_at = Column(DateTime, default=lambda: timeutils.utcnow(),
