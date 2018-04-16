@@ -3,6 +3,7 @@ rstore
 
 Usage:
   rstore csv_import <csv_file_path>
+  rstore find_skus <csv_file_path> <input_meta>
   rstore -h | --help
   rstore --version
 

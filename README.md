@@ -35,3 +35,11 @@ alembic upgrade head
 docker run --name rstore -it --entrypoint /bin/bash --user root rstore:trusty
 
 .. |Build Status| image:: https://api.travis-ci.org/code-R/retail_app.svg?branch=master
+
+
+For healthceck
+
+https://rigor.com/blog/2016/02/monitoring-application-health-over-http
+
+docker commit 5e3c0af955a2 quay.io/code_r/rstore
+docker push quay.io/code_r/rstore

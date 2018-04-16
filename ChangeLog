@@ -1,6 +1,9 @@
 CHANGES
 =======
 
+* added tests for views
+* move logic of creating queries to query\_generator
+* fix linting issues
 * Fix few minor issues found while testing
 * Implemneted rest api for category and sub\_category
 * Fix querying for nested resources
