@@ -35,12 +35,30 @@ class AppConfig(object):
             help='The URI database connect string.'),
     ]
 
+    # JWT options
+    jwt_options = [
+        cfg.StrOpt(
+            'secret',
+            help='Secret used for jwt authentication.'),
+        cfg.StrOpt(
+            'algorithm',
+            default='HS256',
+            help='Algorithm for jwt',
+        ),
+        cfg.StrOpt(
+            'token_expiration_seconds',
+            default='3600',
+            help='Jwt token expiration time',
+        ),
+    ]
+
     def __init__(self):
         self.conf = cfg.CONF
 
     def register_options(self):
         self.conf.register_opts(AppConfig.options)
         self.conf.register_opts(AppConfig.database_options, group='database')
+        self.conf.register_opts(AppConfig.jwt_options, group='jwt')
 
 
 config_mgr = AppConfig()
@@ -51,6 +69,7 @@ def list_opts():
     opts = {
         'DEFAULT': AppConfig.options,
         'database': AppConfig.database_options,
+        'jwt': AppConfig.jwt_options,
     }
 
     return _tupleize(opts)
