@@ -144,3 +144,10 @@ class DuplicationResource(RetailStoreException):
     msg_fmt = "Unable to save Resource=%(table)s data" \
               " because of invalid data."
     code = falcon.HTTP_400
+
+
+class ConfigMissingError(object):
+    """docstring for ConfigMissingError"""
+
+    msg_fmt = "Missing Configuration, please setup properly"
+    code = falcon.HTTP_500

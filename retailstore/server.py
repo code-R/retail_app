@@ -10,12 +10,14 @@ from retailstore.control import (
     hiera,
     categories,
     sub_categories,
+    auth_token,
 )
 from retailstore import errors
 
 
 def configure_app(app, version=''):
     v1_0_routes = [
+        ('tokens', auth_token.CollectionResource()),
         ('health', health.HealthResource()),
         ('locations', locations.CollectionResource()),
         ('locations/{location_id}', locations.ItemResource()),

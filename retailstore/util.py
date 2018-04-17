@@ -1,20 +1,6 @@
 import falcon
 
 from retailstore.middleware.jwt import JwtAuthFilter
-from retailstore import errors
-
-
-class ErrorHandler(object):
-
-    def __init__(self, app):
-        self.app = app
-
-    def __call__(self, environ, start_response):
-        import pdb; pdb.set_trace()  # breakpoint d4b1fbc9 //
-
-        self.app.add_error_handler(
-            Exception, errors.default_exception_handler)
-        return self.app(environ, start_response)
 
 class BasicAuthFilter(object):
     """PasteDeploy filter for Basic Http Auth."""
@@ -39,17 +25,9 @@ def basic_auth_filter_factory(global_config, **local_config):
     return auth_filter
 
 
-def jwt_auth_filter_factory(global_config, exempted_routes=[]):
+def jwt_auth_filter_factory(global_config, exempted_routes=''):
     """Paste Jwt Auth filter factory."""
     def auth_filter(app):
-        return JwtAuthFilter(app)
+        return JwtAuthFilter(app, exempted_routes.split())
 
     return auth_filter
-
-
-def error_handler_filter_factory(global_config, exempted_routes=[]):
-    """Paste Jwt Auth filter factory."""
-    def error_filter(app):
-        return ErrorHandler(app)
-
-    return error_filter
