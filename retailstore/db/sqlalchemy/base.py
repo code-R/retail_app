@@ -49,7 +49,7 @@ class BaseModel(models.ModelBase, models.TimestampMixin):
 
     @classmethod
     def fetch_resource(cls, session, **kwargs):
-        query = cls._fetch_resources_query(session, **kwargs)
+        query = cls._fetch_resource_query(session, **kwargs)
 
         try:
             return query.one()
